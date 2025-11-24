@@ -1,0 +1,63 @@
+# Define image dimensions
+image 50 50
+
+# Define viewport
+viewport -10 -10 10 10
+
+# Define eye position
+eye 0 0 5
+
+# Car Body (represented by a large sphere)
+sphere 0 -1 -15 3 gray CarBody
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent null
+
+# Front Wheels (2 smaller spheres)
+sphere 1.5 -3 -14 1 black FrontRightWheel
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+sphere -1.5 -3 -14 1 black FrontLeftWheel
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+# Rear Wheels (2 smaller spheres)
+sphere 1.5 -3 -16 1 black RearRightWheel
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+sphere -1.5 -3 -16 1 black RearLeftWheel
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+# Car Roof (abstractly represented using 2 triangles)
+tri 1.5 1 -14 -1.5 1 -14 0 2.5 -15 blue RoofFront
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+tri 1.5 1 -16 -1.5 1 -16 0 2.5 -15 blue RoofRear
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+# Back Lights (2 small red spheres)
+sphere 1.7 -1.5 -13.5 0.8 red BackRightLight
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+sphere -1.7 -1.5 -13.5 0.8 red BackLeftLight
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+# Front Lights (2 small yellow spheres)
+sphere 1.7 -1.5 -16.5 0.8 yellow FrontRightLight
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+sphere -1.7 -1.5 -16.5 0.8 yellow FrontLeftLight
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent CarBody
+
+# Ground (for reference)
+plane 0 -5 0 0 1 0 green Ground
+transform 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+parent null
